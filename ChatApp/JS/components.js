@@ -1,75 +1,91 @@
 const components = {}
-components.welcomeScreen = '<h3> Hello World! </h3>'
+components.welcomPage = `
+<h3>Hello world</h3>
+`
 components.registerPage = `
-<body>
-    <div class="register-container">
-        <div class="background-image">
-
-        </div>
-        <div class="form-wrapper">
-            <div class="register-header">MindX Chat</div>
-            <div id="register-form">
-                <div class="name-wrapper">
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="First Name" name="firstName">
-                        <div id="first-name-error" class="err"></div>
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="text" placeholder="Last Name" name="lastName">
-                        <div id="last-name-error" class="err"></div>
-                    </div>
-                </div>
-                <div class="input-wrapper">
-                    <input type="email" placeholder="Email" name="email">
-                    <div id="email-error" class="err"></div>
-                </div>
-                <div class="input-wrapper">
-                    <input type="password" placeholder="Password" name="password">
-                    <div id="password-error" class="err"></div>
-                </div>
-                <div class="input-wrapper">
-                    <input type="password" placeholder="Confirm Password" name="confirmPassword">
-                    <div id="confirm-password-error" class="err"></div>
-                </div>
-                <div class="register-form-action">
-                    <div>
-                        Already have an account? <span id="redirect-login" class="cursor-pointer">Login</span>
-                    </div>
-                    <button class="btn" type="submit">Register</button>
-                </div>
-            </div>
-        </div>
-
+<div class="register-container">
+<div class="background-img"></div>
+<div class="form-wrapper">
+  <div class="register-header">MindX Chat</div>
+  <form id="register-form">
+    <div class="name-wrapper">
+      <div class="input-wrapper">
+        <input type="text" placeholder="First name" name="firstName">
+        <div id="first-name-error" class="err"></div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Last name" name="lastName">
+        <div id="last-name-error" class="err"></div>
+      </div>
     </div>
-</body>
+    <div class="input-wrapper">
+      <input type="email" placeholder="Email" name="email">
+      <div id="email-error" class="err"></div>
+    </div>
+    <div class="input-wrapper">
+      <input type="password" placeholder="Password" name="password">
+      <div id="password-error" class="err"></div>
+    </div>
+    <div class="input-wrapper">
+      <input type="password" placeholder="Confirm password" name="confirmPassword">
+      <div id="confirm-password-error" class="err"></div>
+    </div>
+    <div class="register-form-action">
+      <div>
+        Already have an account?<span class="cursor-pointer" id="redirect-login">Login</span>
+      </div>
+      <button class="btn" type="submit">Register</button>
+    </div>
+  </form>
+</div>
+</div>
 `
 components.loginPage = `
-<body>
-    <div class="login-container">
-        <div class="background-image">
-
-        </div>
-        <div class="form-wrapper">
-            <div class="register-header">MindX Chat</div>
-            <div id="login-form">
-
-                <div class="input-wrapper">
-                    <input type="email" placeholder="Email" name="email">
-                    <div id="email-error" class="err"></div>
-                </div>
-                <div class="input-wrapper">
-                    <input type="password" placeholder="Password" name="password">
-                    <div id="password-error" class="err"></div>
-                </div>
-
-                <div class="login-form-action">
-                    <div>
-                        Don't have an account ? <span id="redirect-register" class="cursor-pointer">Register</span>
-                    </div>
-                    <button class="btn" type="submit">Login</button>
-                </div>
-            </div>
-        </div>
-
+<div class="login-container">
+<div class="background-img"></div>
+<div class="form-wrapper">
+  <div class="login-header">MindX Chat</div>
+  <form id="login-form">
+    <div class="input-wrapper">
+      <input type="email" placeholder="Email" name="email">
+      <div id="email-error" class="err"></div>
     </div>
+    <div class="input-wrapper">
+      <input type="password" placeholder="Password" name="password">
+      <div id="password-error" class="err"></div>
+    </div>
+    <div class="login-form-action">
+      <div>
+        Don't have account?<span id="redirect-register" class="cursor-pointer">Register</span>
+      </div>
+      <button class="btn" type="submit">Login</button>
+    </div>
+  </form>
+</div>
+</div>
+`
+
+components.chatPage = `
+<div class="chat-container">
+<div class="header"> MindX Chat</div>
+<div class="main">
+  <div class="conversation-detail">
+    <div class="conversation-title"> First Conversation </div>
+    <div class="list-messages">
+      <div class="message message-mine">
+        <div class="message-content">Hello</div>
+      </div>
+      <div class="message message-other">
+        <div class="owner">Nguyễn Quốc Huy</div>
+        <div class="message-content">Hi</div>
+      </div>
+    </div>
+    <form id="send-message-form">
+      <input type="text" placeholder="Type your message" name="message">
+      <button class="btn">Send</button>
+    </form>
+  </div>
+
+</div>
+</div>
 `
