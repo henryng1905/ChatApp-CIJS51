@@ -48,10 +48,12 @@
     border-radius: 8px;
     max-width: 45%;
     width: max-content;
+    
 }
 .list-messages .message-mine{
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
 }
 .list-messages .message.message-mine .message-content{
     color: #ffffff;
@@ -59,4 +61,8 @@
 }
 .list-messages{
     padding: 10px;
+    overflow: auto;
+}
+.list-messages .message .name{
+    font-size: 13px;
 }

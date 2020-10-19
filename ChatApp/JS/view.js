@@ -48,15 +48,18 @@ view.setActiveScreen = (screenName) => {
                 console.log(message)
                 const messageSend = {
                     owner: model.currentUser.email,
-                    content: message
+                    content: message,
+                    createdAt: new Date().toISOString()
                 }
-                view.addMessage(messageSend)
-                const messageOther = {
-                    owner: 'Huy Huy',
-                    content: message
+                if (message.trim() !== '') {
+                    model.addMessage(messageSend)
+                    sendMessageForm.message.value = ``
                 }
-                view.addMessage(messageOther)
             })
+            //lay cac cuoc hoi thoai ve
+            model.getConversations()
+            //lang nghe thay doi cua cac cuoc hoi thoai
+            model.listenConversationChange()
             break
     }
 }
@@ -78,3 +81,13 @@ view.addMessage = (message) => {
     }
     document.querySelector('.list-messages').appendChild(messageWrapper)
 }
+
+view.showCurrentConversation = () => {
+    document.querySelector('.list-messages').innerHTML = ''
+    document.querySelector('.conversation-title').innerHTML = ''
+    document.querySelector('.conversation-title').innerHTML = model.currentConversation.title
+    for (const oneMessage of model.currentConversation.messages) {
+        view.addMessage(oneMessage)
+    }
+}
+
